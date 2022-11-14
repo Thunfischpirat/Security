@@ -1,2 +1,2 @@
 # Security
-Repository for the WS22/23 course "Security" at Saarland University.
+Repository contains code for exercises and projects of the core course Security during WS22/23 at Saarland University.
