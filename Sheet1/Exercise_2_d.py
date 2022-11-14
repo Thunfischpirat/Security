@@ -6,6 +6,7 @@ class EllipticCurve:
     """
     Implementation of an elliptic curve in weierstrass normal form
     """
+
     def __init__(self, a: int, b: int, p: int):
         """
         Initialize an elliptic curve in weierstrass normal form
@@ -23,15 +24,15 @@ class EllipticCurve:
         self.p = p
 
     def __repr__(self):
-        """ Return a string representation of the curve. """
+        """Return a string representation of the curve."""
         return f"y^2 = x^3 + {self.a}x + {self.b} (mod {self.p})"
 
-    def __contains__(self, point):
-        """ Check whether a point is on the curve. """
+    def __contains__(self, point: tuple) -> bool:
+        """Check whether a point is on the curve."""
         x, y = point
         return (y**2 - x**3 - self.a * x - self.b) % self.p == 0
 
-    def add(self, point1, point2):
+    def add(self, point1: tuple, point2: tuple) -> tuple:
         """
         Add two points on the curve.
         """
@@ -49,7 +50,7 @@ class EllipticCurve:
         y3 = s * (x1 - x3) - y1
         return x3 % self.p, y3 % self.p
 
-    def mul(self, point, n):
+    def mul(self, point: tuple, n: int) -> tuple:
         """
         Multiply a point on the curve with a scalar.
         """
@@ -59,6 +60,7 @@ class EllipticCurve:
         for _ in range(n - 1):
             result = self.add(result, point)
         return result
+
 
 if __name__ == "__main__":
     # Parameters for the elliptic curve.
