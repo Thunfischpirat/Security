@@ -1,7 +1,9 @@
 # Code for Sheet 1 exercise 2 a.
 # @authors: Abdullah, Majdi, Christian.
 
-from numbers import e, d, N, q, p
+from numbers import e_a as e
+from numbers import N_a as N
+from numbers import d, q, p
 
 # Check whether N is the product of p and q.
 print(f"N=p*q is {N == p * q}")
